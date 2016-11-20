@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {AppComponent} from "./app/app.component";
+import {AppComponent} from "./components/app/app.component";
 import {ShoppingListComponent} from "./components/shopping-list/shopping-list.component";
 
 import '../public/css/styles.css';
