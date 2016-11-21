@@ -10,6 +10,8 @@ import {ShoppingListService} from "./shopping-list.service";
                     <li *ngFor="let p of products">{{p.Id}}: {{p.Name}}</li>
                 </ul>`,
 
+    styleUrls: ['./shopping-list.component.css'],
+
     providers: [ShoppingListService]
 })
 export class ShoppingListComponent implements OnInit {
