@@ -6,8 +6,16 @@ import {ShoppingListService} from "./shopping-list.service";
     selector: 'shopping-list',
 
     template: `
+                <h2>
+                    Products: {{getListLengh()}}
+                    <span bind-innerHTML="getListLengh()"></span>
+                    <span [innerHTML]="getListLengh()"></span>
+                </h2>
                 <ul>
-                    <li *ngFor="let p of products">{{p.Id}}: {{p.Name}}</li>
+                    <li *ngFor="let p of products;let i=index;let is_odd=odd;" [class.odd]="is_odd">
+                        {{p.Id}}: {{p.Name}}
+                        <button (click)="remove(p, $event);">Delete</button>
+                    </li>
                 </ul>`,
 
     styleUrls: ['./shopping-list.component.css'],
@@ -26,5 +34,14 @@ export class ShoppingListComponent implements OnInit {
             .then(p=>this.products = p);
     }
 
+    remove(product:Product){
+        console.log(product);
+
+        this.products.splice(this.products.indexOf(product),1);
+    }
+
+    getListLengh(){
+        return this.products.length;
+    }
 
 }
