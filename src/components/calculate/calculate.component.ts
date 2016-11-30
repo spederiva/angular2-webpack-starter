@@ -5,9 +5,7 @@ import {Component} from "@angular/core";
 
     template: `
         <h2>Result: {{result}}</h2>
-        <h2>Result: {{result2}}</h2>
-
-        <sum ([sumResult])="result"></sum>
+        <sum [(result)]="result"></sum>
 
         <hr/>
 
