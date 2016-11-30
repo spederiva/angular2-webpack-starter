@@ -24,8 +24,12 @@ export class SizerComponent {
     resize(delta: number) {
         this.size = Math.min(40, Math.max(8, +this.size + delta));
 
-        console.log(this.size);
+        console.log('size', this.size);
 
         this.sizeChange.emit(this.size);
+    }
+
+    ngOnInit():void {
+        //this.resize(-1);
     }
 }

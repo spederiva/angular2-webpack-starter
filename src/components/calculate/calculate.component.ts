@@ -9,6 +9,11 @@ import {Component} from "@angular/core";
 
         <hr/>
 
+        <!--<h2>Result: {{result2}}</h2>-->
+        <!--<sum [(result)]="result2"></sum>-->
+
+        <!--<hr/>-->
+
         <my-sizer [(size)]="fontSizePx"></my-sizer>
         <div [style.font-size.px]="fontSizePx">Resizable Text {{fontSizePx}}</div>
     `,
@@ -26,6 +31,9 @@ export class CalculateComponent {
     fontSizePx: number;
 
     constructor() {
+    }
+
+    ngOnInit(){
         //this.result = 1;
 
         this.fontSizePx = 10;

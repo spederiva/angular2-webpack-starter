@@ -22,15 +22,17 @@ export class SumComponent extends OnInit {
     }
 
     ngOnInit():void {
-        // this.sumAndEmit();
+        this.sumAndEmit();
     }
 
     num1Change(num:number) {
+        console.log('num1Change', num);
         this.num1 = num;
         this.sumAndEmit();
     }
 
     num2Change(num:number) {
+        console.log('num1Change', num);
         this.num2 = num;
         this.sumAndEmit();
     }
@@ -38,9 +40,8 @@ export class SumComponent extends OnInit {
     sumAndEmit() {
         this.result = +this.num1 + +this.num2;
 
-        this.resultChange.emit(this.result);
+        console.log('result: ', this.result, Date.now());
 
-        debugger;
-        console.log('result: ', this.result);
+        this.resultChange.emit(this.result);
     }
 }
