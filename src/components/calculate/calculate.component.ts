@@ -8,9 +8,9 @@ import {Component} from "@angular/core";
         <h2>Result: {{result2}}</h2>
 
         <sum ([sumResult])="result"></sum>
-        
+
         <hr/>
-        
+
         <my-sizer [(size)]="fontSizePx"></my-sizer>
         <div [style.font-size.px]="fontSizePx">Resizable Text {{fontSizePx}}</div>
     `,
@@ -23,6 +23,8 @@ import {Component} from "@angular/core";
 })
 export class CalculateComponent {
     result: number;
+    result2: number;
+
     fontSizePx: number;
 
     constructor() {
