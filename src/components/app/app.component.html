@@ -5,4 +5,19 @@
 
 <!--<shopping-list></shopping-list>-->
 
+<my-sizer [(size)]="fontSizePx"></my-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text {{fontSizePx}}</div>
+
+<hr/>
+
 <calculate></calculate>
+
+<hr/>
+
+<div>Counter: {{counter}}</div>
+<counter [(counter)]="counter"></counter>
+
+<hr/>
+
+<div>Counter: {{counter}}</div>
+<counter [(counter)]="counter"></counter>

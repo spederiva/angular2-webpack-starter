@@ -9,6 +9,7 @@ import {CalculateComponent} from "./components/calculate/calculate.component";
 import {SumComponent} from "./components/sum/sum.component";
 import {FormsModule} from "@angular/forms";
 import {SizerComponent} from "./components/sizer/sizer.component";
+import {CounterComponent} from "./components/counter/counter.component";
 
 @NgModule({
     imports: [
@@ -19,7 +20,7 @@ import {SizerComponent} from "./components/sizer/sizer.component";
     ],
 
     declarations: [
-        AppComponent, ShoppingListComponent, CalculateComponent, SumComponent, SizerComponent
+        AppComponent, ShoppingListComponent, CalculateComponent, SumComponent, SizerComponent, CounterComponent
     ],
 
     bootstrap: [AppComponent]

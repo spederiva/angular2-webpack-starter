@@ -7,7 +7,7 @@ import {Component, Input, OnInit, Output, EventEmitter} from "@angular/core";
         <div><input [ngModel]="num1" (ngModelChange)="num1Change($event)" type="text" /></div>
         <div><input [ngModel]="num2" (ngModelChange)="num2Change($event)" type="text"/></div>
 
-        <div><input [ngModel]="result" type="text"/></div>
+        <!--<div><input [ngModel]="result" type="text"/></div>-->
     `
 })
 export class SumComponent extends OnInit {
@@ -42,6 +42,6 @@ export class SumComponent extends OnInit {
 
         console.log('result: ', this.result, Date.now());
 
-        this.resultChange.emit(this.result);
+        //this.resultChange.emit(this.result);
     }
 }
