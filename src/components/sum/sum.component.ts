@@ -4,8 +4,8 @@ import {Component, Input, OnInit, Output, EventEmitter} from "@angular/core";
     selector: 'sum',
 
     template: `
-        <div><input [ngModel]="num1" (ngModelChange)="num1Change($event)" type="number" /></div>
-        <div><input [ngModel]="num2" (ngModelChange)="num2Change($event)" type="number"/></div>
+        <div><input [ngModel]="num1" (ngModelChange)="num1Change($event)" type="text" /></div>
+        <div><input [ngModel]="num2" (ngModelChange)="num2Change($event)" type="text"/></div>
 
         <div><input [ngModel]="result" type="text"/></div>
     `
