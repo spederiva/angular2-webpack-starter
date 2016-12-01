@@ -1,6 +1,4 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
-import {count} from "rxjs/operator/count";
-
 
 @Component({
     selector: 'counter',

@@ -8,5 +8,11 @@ import {Component} from '@angular/core';
 export class AppComponent {
     fontSizePx: number = 12;
 
-    counter:number = 10;
+    counter1:number = 10;
+
+    counter2:number = 20;
+
+    counter3:number = 30;
+
+    counter4:number = 40;
 }

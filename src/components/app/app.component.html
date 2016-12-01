@@ -14,10 +14,24 @@
 
 <hr/>
 
-<div>Counter: {{counter}}</div>
-<counter [(counter)]="counter"></counter>
+<div>Counter: {{counter1}}</div>
+<counter [(counter)]="counter1"></counter>
 
 <hr/>
 
-<div>Counter: {{counter}}</div>
-<counter [(counter)]="counter"></counter>
+<div>Counter: {{counter2}}</div>
+<counter [counter]="counter2" (counterChange)="counter2 = $event"></counter>
+
+<hr/>
+
+<div>Counter2: {{counter3}}</div>
+<!--<counter2 [(counter)]="counter3"></counter2>-->
+<counter2 [(counter)]="counter3"></counter2>
+
+<hr/>
+
+<numfield></numfield>
+
+<hr/>
+
+<list></list>
