@@ -13,6 +13,7 @@ import {CounterComponent} from "./components/counter/counter.component";
 import {CounterComponent2} from "./components/counter2/counter.component";
 import {NumFieldComponent} from "./components/numFieldComponent/numfield.component";
 import {ListComponent} from "./components/list/list";
+import {TheFormComponent} from "./components/the-form/TheFormComponent";
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import {ListComponent} from "./components/list/list";
         CounterComponent,
         CounterComponent2,
         NumFieldComponent,
-        ListComponent
+        ListComponent,
+        TheFormComponent
     ],
 
     bootstrap: [AppComponent]

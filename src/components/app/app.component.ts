@@ -15,4 +15,6 @@ export class AppComponent {
     counter3:number = 30;
 
     counter4:number = 40;
+
+    name: string = "Moshe Levy";
 }
