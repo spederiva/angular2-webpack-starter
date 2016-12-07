@@ -5,11 +5,12 @@ import {settings} from "cluster";
     selector: 'sum',
 
     template: `
-        <div>Now: {{now}}</div>
-        <div><input [(ngModel)]="myNum" type="text" /></div>
+        <div highlight="">Now: {{now}}</div>
+        <div>Result: {{result|toString}}</div>
+        <div><label for="result">Result: </label><input id="result" [ngModel]="result" type="text" readonly/></div>
 
-        <div><input [ngModel]="num1" (ngModelChange)="num1Change($event)" type="number" /></div>
-        <div><input [ngModel]="num2" (ngModelChange)="num2Change($event)" type="number"/></div>
+        <div><label for="result">Num1: </label><input id="num1" [ngModel]="num1" (ngModelChange)="num1Change($event)" type="number" /></div>
+        <div><label for="result">Num2: </label><input id="num2" [ngModel]="num2" (ngModelChange)="num2Change($event)" type="number"/></div>
 
         <!--<div><input [ngModel]="result" type="text"/></div>-->
     `

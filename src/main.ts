@@ -7,4 +7,6 @@ if (process.env.ENV === 'production') {
     enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule)
+    .then(success=>console.log('Bootstrap Succeed', success))
+    .catch(err=>console.error('Bootstrap didn\'s succeed!', err));
