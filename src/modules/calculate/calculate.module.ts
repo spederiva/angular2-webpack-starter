@@ -5,7 +5,7 @@ import {CommonModule} from "@angular/common";
 import {SumComponent} from "./component/sum/sum.component";
 import {CalculateComponent} from "./component/calculate/calculate.component";
 import {HightlightDirective} from "./directives/highlight.directive";
-import {NumberToString} from "./pipes/NumberToString";
+import {NumberToString} from "./pipes/numberToString";
 
 
 @NgModule({
