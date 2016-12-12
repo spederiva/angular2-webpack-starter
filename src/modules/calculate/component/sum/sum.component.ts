@@ -38,6 +38,7 @@ export class SumComponent implements OnInit {
     }
 
     ngOnInit():void {
+        console.log('SumComponent OnInit');
         //this.sumAndEmit();
 
         //setInterval(()=> {

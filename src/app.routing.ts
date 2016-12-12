@@ -18,5 +18,7 @@ export const appRoutes:Routes = [
     {path: 'shopping-list', component: ShoppingListComponent},
     {path: 'sizer', component: SizerComponent},
     {path: 'the-form', component: TheFormComponent},
-    {path: 'sum', component: SumComponent}
+    //{path: 'sum', component: SumComponent}
+    //{path: 'sum', loadChildren: 'modules/calculate/calculate.module#CalculateModule'}
+
 ];
