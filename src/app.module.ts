@@ -2,6 +2,9 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {FormsModule} from "@angular/forms";
+import {RouterModule, Routes} from '@angular/router'
+
+import {appRoutes} from "./app.routing";
 
 import {CalculateModule} from "./modules/calculate/calculate.module";
 
@@ -24,6 +27,7 @@ import '../public/css/styles.css';
         HttpModule,
         JsonpModule,
         FormsModule,
+        RouterModule.forRoot(appRoutes),
 
         CalculateModule
     ],

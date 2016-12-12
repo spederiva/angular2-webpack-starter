@@ -9,39 +9,38 @@ const drop = (n:any) => (xs:any) => xs.slice(n);
 const reverse = (xs:any) => xs.slice(0).reverse();
 const comp = (f:any) => (g:any) => (x:any) => f(g(x));
 const not = (x:any) => !x;
-const chunk = (n:any) => (xs:any) => isEmpty(xs) ? [] : [take(n)(xs), ...chunk(n)(drop(n)(xs))];
+const chunk:any = (n:any) => (xs:any) => isEmpty(xs) ? [] : [take(n)(xs), ...chunk(n)(drop(n)(xs))];
 
 // numToWords :: (Number a, String a) => a -> String
-let numToWords = n => {
-    let a = [
-        '', 'one', 'two', 'three', 'four',
-        'five', 'six', 'seven', 'eight', 'nine',
-        'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
-        'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
-    ];
-    let b = [
-        '', '', 'twenty', 'thirty', 'forty',
-        'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
-    ];
-    let g = [
-        '', 'thousand', 'million', 'billion', 'trillion', 'quadrillion',
-        'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion'
-    ];
+let numToWords:any = (n:any) => {
+    let a = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    let b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    let g = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion'];
+
     // this part is really nasty still
     // it might edit this again later to show how Monoids could fix this up
-    let makeGroup = ([ones,tens,huns]) => {
+    let makeGroup:any = ([ones,tens,huns]:number[]) => {
+
         return [
             num(huns) === 0 ? '' : a[huns] + ' hundred ',
             num(ones) === 0 ? b[tens] : b[tens] && b[tens] + '-' || '',
-            a[tens+ones] || a[ones]
+            a[tens + ones] || a[ones]
         ].join('');
     };
+
     // "thousands" constructor; no real good names for this, i guess
-    let thousand = (group,i) => group === '' ? group : `${group} ${g[i]}`;
+    let thousand = (group:any, i:any) => group === '' ? group : `${group} ${g[i]}`;
+
     // execute !
-    if (typeof n === 'number') return numToWords(String(n));
-    if (n === '0')             return 'zero';
-    return comp (chunk(3)) (reverse) (arr(n))
+    if (typeof n === 'number') {
+        return numToWords(String(n));
+    }
+
+    if (n === '0') {
+        return 'zero';
+    }
+
+    return comp(chunk(3))(reverse)(arr(n))
         .map(makeGroup)
         .map(thousand)
         .filter(comp(not)(isEmpty))
@@ -53,7 +52,7 @@ let numToWords = n => {
     name: 'toString'
 })
 export class NumberToString implements PipeTransform {
-    transform(value: any, args: any): any {
+    transform(value:any, args:any):any {
         console.log('NumberToString', value, args);
 
         return value && numToWords(value);

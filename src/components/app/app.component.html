@@ -1,43 +1,15 @@
-<main>
-    <h1>Hello from Angular App with Webpack</h1>
-    <img src="../../../public/images/angular.png">
-</main>
+<h1>My Angular2 Sample</h1>
 
-<!--<shopping-list></shopping-list>-->
-
-<my-sizer [(size)]="fontSizePx"></my-sizer>
-<div [style.font-size.px]="fontSizePx">Resizable Text {{fontSizePx}}</div>
-
-<hr/>
-
-<calculate></calculate>
+<a routerLink="counter">CounterComponent</a>
+<a routerLink="counter2">CounterComponent2</a>
+<a routerLink="list">ListComponent</a>
+<a routerLink="myButton">MyButtonComponent</a>
+<a routerLink="numFieldComponent">NumFieldComponent</a>
+<a routerLink="shopping-list">ShoppingListComponent</a>
+<a routerLink="sizer">SizerComponent</a>
+<a routerLink="the-form">TheFormComponent</a>
+<a routerLink="sum">SumComponent</a>
 
 <hr/>
 
-<div>Counter: {{counter1}}</div>
-<counter [(counter)]="counter1"></counter>
-
-<hr/>
-
-<div>Counter: {{counter2}}</div>
-<counter [counter]="counter2" (counterChange)="counter2 = $event"></counter>
-
-<hr/>
-
-<div>Counter2: {{counter3}}</div>
-<!--<counter2 [(counter)]="counter3"></counter2>-->
-<counter2 [(counter)]="counter3"></counter2>
-
-<hr/>
-
-<numfield></numfield>
-
-<hr/>
-
-<list></list>
-
-<hr/>
-
-<div>Name: {{name}}</div>
-<div>Name: {{namee?.xxx}}</div>
-<the-form [(name)]="name"></the-form>
+<router-outlet></router-outlet>
