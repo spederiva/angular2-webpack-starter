@@ -1,8 +1,10 @@
-import {NgModule} from '@angular/core';
+import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from '@angular/router'
+
+import '../public/css/styles.css';
 
 import {appRoutes} from "./app.routing";
 
@@ -18,8 +20,7 @@ import {NumFieldComponent} from "./components/numFieldComponent/numfield.compone
 import {ListComponent} from "./components/list/list";
 import {TheFormComponent} from "./components/the-form/TheFormComponent";
 
-
-import '../public/css/styles.css';
+import {CoreModule} from "./modules/core/core.module";
 
 @NgModule({
     imports: [
@@ -28,6 +29,8 @@ import '../public/css/styles.css';
         JsonpModule,
         FormsModule,
         RouterModule.forRoot(appRoutes),
+
+        CoreModule,
 
         CalculateModule
     ],
@@ -47,5 +50,7 @@ import '../public/css/styles.css';
     bootstrap: [AppComponent]
 })
 export class AppModule {
-
+    constructor(@Optional() @SkipSelf()  calculateModule: CalculateModule){
+        console.log('calculateModule', calculateModule)
+    }
 }

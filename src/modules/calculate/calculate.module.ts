@@ -27,7 +27,7 @@ import {NumberToString} from "./pipes/numberToString";
     ],
 
     exports: [
-        //RouterModule
+        RouterModule
         //CalculateComponent
     ]
 })
