@@ -8,6 +8,7 @@ import '../public/css/styles.css';
 
 import {appRoutes} from "./app.routing";
 
+import {CoreModule} from "./modules/core/core.module";
 import {CalculateModule} from "./modules/calculate/calculate.module";
 
 import {AppComponent} from "./components/app/app.component";
@@ -19,18 +20,18 @@ import {CounterComponent2} from "./components/counter2/counter.component";
 import {NumFieldComponent} from "./components/numFieldComponent/numfield.component";
 import {ListComponent} from "./components/list/list";
 import {TheFormComponent} from "./components/the-form/TheFormComponent";
+import {SharedModule} from "./modules/shared/shared.module";
 
-import {CoreModule} from "./modules/core/core.module";
 
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
         JsonpModule,
-        FormsModule,
         RouterModule.forRoot(appRoutes),
 
-        CoreModule,
+        CoreModule.forRoot({username: 'xxx', password: 'password'}),
+        SharedModule,
 
         CalculateModule
     ],
