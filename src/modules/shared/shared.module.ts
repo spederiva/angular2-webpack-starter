@@ -4,6 +4,7 @@ import {CommonModule} from "@angular/common";
 
 import {HightlightDirective} from "./directives/highlight.directive";
 import {NumberToString} from "./pipes/numberToString";
+import {ReverseDirective} from "./directives/reverse.directive";
 
 @NgModule({
     imports: [
@@ -14,6 +15,7 @@ import {NumberToString} from "./pipes/numberToString";
     declarations:[
         HightlightDirective,
         NumberToString,
+        ReverseDirective
     ],
 
     exports: [
@@ -21,7 +23,8 @@ import {NumberToString} from "./pipes/numberToString";
         FormsModule,
 
         HightlightDirective,
-        NumberToString
+        NumberToString,
+        ReverseDirective
     ],
 
 })

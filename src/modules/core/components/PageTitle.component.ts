@@ -6,7 +6,7 @@ import {User} from "../models/User";
     selector: 'page-title',
 
     template: `
-        <h1>My Angular2 WebPack App</h1>
+        <h1 reverse="">My Angular2 WebPack App</h1>
         <div>User: {{this._user.username}}</div>
     `
 })

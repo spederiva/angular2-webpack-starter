@@ -6,7 +6,7 @@ export class UserService {
     _defaultUser:User;
 
     constructor(@Optional() user:User) {
-        console.log('user', user);
+        console.log('UserService', user);
 
         if(user){
             this._defaultUser = user;

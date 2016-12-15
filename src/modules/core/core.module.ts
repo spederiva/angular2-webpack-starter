@@ -5,9 +5,12 @@ import {PageTitleComponent} from "./components/PageTitle.component";
 import {CalculateModule} from "../calculate/calculate.module";
 import {User} from "./models/User";
 import {UserService} from "./services/user.service";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
-    imports: [],
+    imports: [
+        SharedModule
+    ],
 
     providers: [
         UserService
