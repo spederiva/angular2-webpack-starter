@@ -7,7 +7,6 @@ import {MyButtonComponent} from "./components/myButton/my-button.component";
 import {ShoppingListComponent} from "./components/shopping-list/shopping-list.component";
 import {SizerComponent} from "./components/sizer/sizer.component";
 import {TheFormComponent} from "./components/the-form/TheFormComponent";
-import {SumComponent} from "./modules/calculate/component/sum/sum.component";
 
 export const appRoutes:Routes = [
     {path: 'counter', component: CounterComponent},
@@ -17,8 +16,5 @@ export const appRoutes:Routes = [
     {path: 'numFieldComponent', component: NumFieldComponent},
     {path: 'shopping-list', component: ShoppingListComponent},
     {path: 'sizer', component: SizerComponent},
-    {path: 'the-form', component: TheFormComponent},
-    //{path: 'sum', component: SumComponent}
-    //{path: 'sum', loadChildren: 'modules/calculate/calculate.module#CalculateModule'}
-
+    {path: 'the-form', component: TheFormComponent}
 ];

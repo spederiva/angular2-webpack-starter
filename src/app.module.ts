@@ -50,7 +50,4 @@ import {CoreModule} from "./modules/core/core.module";
     bootstrap: [AppComponent]
 })
 export class AppModule {
-    constructor(@Optional() @SkipSelf()  calculateModule: CalculateModule){
-        console.log('calculateModule', calculateModule)
-    }
 }

@@ -1,34 +1,28 @@
 import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
-import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 
-import {SumComponent} from "./component/sum/sum.component";
-import {CalculateComponent} from "./component/calculate/calculate.component";
-import {HightlightDirective} from "./directives/highlight.directive";
-import {NumberToString} from "./pipes/numberToString";
+import {SharedModule} from "../shared/shared.module";
+
+import {CalculateComponent} from "./components/calculate/calculate.component";
+import {SumComponent}       from "./components/sum/sum.component";
 
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
+        SharedModule,
+
         RouterModule.forChild([
             {path:'sum', component: SumComponent}
         ])
     ],
 
     declarations: [
-        HightlightDirective,
-        NumberToString,
-
         CalculateComponent,
         SumComponent
     ],
 
     exports: [
         RouterModule
-        //CalculateComponent
     ]
 })
 export class CalculateModule {
