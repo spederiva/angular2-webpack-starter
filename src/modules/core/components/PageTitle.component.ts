@@ -6,12 +6,16 @@ import {User} from "../models/User";
     selector: 'page-title',
 
     template: `
-        <h1 reverse="">My Angular2 WebPack App</h1>
+        <h1 reverse="" [myhighlight]="highlightColor" [hoverColor]="hoverColor">My Angular2 WebPack App: {{highlightColor}}-{{hoverColor}}</h1>
         <div>User: {{this._user.username}}</div>
     `
 })
 export class PageTitleComponent {
     _user:User;
+
+    highlightColor:string = 'green';
+
+    hoverColor:string = 'yellow';
 
     constructor(userService:UserService) {
         this._user = userService.get();

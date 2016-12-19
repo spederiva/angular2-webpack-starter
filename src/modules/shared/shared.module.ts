@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 
-import {HightlightDirective} from "./directives/highlight.directive";
+import {HighlightDirective} from "./directives/highlight.directive";
 import {NumberToString} from "./pipes/numberToString";
 import {ReverseDirective} from "./directives/reverse.directive";
 
@@ -13,7 +13,7 @@ import {ReverseDirective} from "./directives/reverse.directive";
     ],
 
     declarations:[
-        HightlightDirective,
+        HighlightDirective,
         NumberToString,
         ReverseDirective
     ],
@@ -22,7 +22,7 @@ import {ReverseDirective} from "./directives/reverse.directive";
         CommonModule,
         FormsModule,
 
-        HightlightDirective,
+        HighlightDirective,
         NumberToString,
         ReverseDirective
     ],
