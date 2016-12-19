@@ -21,6 +21,7 @@ import {NumFieldComponent} from "./components/numFieldComponent/numfield.compone
 import {ListComponent} from "./components/list/list";
 import {TheFormComponent} from "./components/the-form/TheFormComponent";
 import {SharedModule} from "./modules/shared/shared.module";
+import {CounterModule} from "./modules/counter/counter.module";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {SharedModule} from "./modules/shared/shared.module";
         CoreModule.forRoot({username: 'xxx', password: 'password'}),
         SharedModule,
 
-        CalculateModule
+        CalculateModule,
+        CounterModule
     ],
 
     declarations: [

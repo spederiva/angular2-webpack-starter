@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Injector, OnInit} from "@angular/core";
 import {UserService} from "../services/user.service";
 import {User} from "../models/User";
 
@@ -16,14 +16,20 @@ import {User} from "../models/User";
         }
     `]
 })
-export class PageTitleComponent {
-    _user:User;
+export class PageTitleComponent implements OnInit{
+    _user: User;
 
-    highlightColor:string = 'green';
+    highlightColor: string = 'green';
 
-    hoverColor:string = 'yellow';
+    hoverColor: string = 'yellow';
 
-    constructor(userService:UserService) {
-        this._user = userService.get();
+    constructor(private injector: Injector) {
     }
+
+    ngOnInit(): void {
+        let srv = this.injector.get(UserService);
+
+        this._user = srv.get();
+    }
+
 }

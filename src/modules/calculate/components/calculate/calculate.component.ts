@@ -10,16 +10,16 @@ import {Component, ViewEncapsulation} from "@angular/core";
         <sum [(result)]="result"></sum>
     `,
 
-    styles: [`
-        h2{
-            color: red;
-        }
-
-        *{
-            color: blue;
-        }
-    `],
-    // styleUrls: ['./calculate.styles.css'],
+    // styles: [`
+    //     h2{
+    //         color: red;
+    //     }
+    //
+    //     *{
+    //         color: blue;
+    //     }
+    // `],
+    styleUrls: ['calculate.component.css'],
 
     encapsulation: ViewEncapsulation.Native
 })

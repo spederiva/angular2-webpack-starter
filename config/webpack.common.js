@@ -38,6 +38,7 @@ module.exports = {
                 exclude: [
                     helpers.root('src', 'components'),
                     helpers.root('src', 'modules')
+                    // helpers.root('src', 'modules', 'calculate', 'components', 'calculate')
                 ],
                 loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
             },
@@ -46,6 +47,7 @@ module.exports = {
                 include: [
                     helpers.root('src', 'components'),
                     helpers.root('src', 'modules')
+                    // helpers.root('src', 'modules', 'calculate', 'components', 'calculate')
                 ],
                 loader: 'raw'
             }
