@@ -13,7 +13,19 @@ import {settings} from "cluster";
         <div><label for="result">Num2: </label><input id="num2" [ngModel]="num2" (ngModelChange)="num2Change($event)" type="number"/></div>
 
         <!--<div><input [ngModel]="result" type="text"/></div>-->
-    `
+    `,
+
+    styles:[`
+        :host {
+            display: block;
+            border: 1px solid black;
+            background: greenyellow;
+        }
+        
+        :host /deep/ h2 {
+            color: blue;
+        }
+    `]
 })
 export class SumComponent implements OnInit {
     @Input() result:number;

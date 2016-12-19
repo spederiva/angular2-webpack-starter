@@ -1,6 +1,8 @@
-import {Component} from "@angular/core";
+import {Component, ViewEncapsulation} from "@angular/core";
 
 @Component({
+    // moduleId: module.id,
+
     selector: 'calculate',
 
     template: `
@@ -12,7 +14,14 @@ import {Component} from "@angular/core";
         h2{
             color: red;
         }
-    `]
+
+        *{
+            color: blue;
+        }
+    `],
+    // styleUrls: ['./calculate.styles.css'],
+
+    encapsulation: ViewEncapsulation.Native
 })
 export class CalculateComponent {
     result: number;
@@ -21,7 +30,7 @@ export class CalculateComponent {
     constructor() {
     }
 
-    ngOnInit(){
+    ngOnInit() {
         //this.result = 1;
     }
 }

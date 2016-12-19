@@ -12,7 +12,7 @@ import {SumComponent}       from "./components/sum/sum.component";
         SharedModule,
 
         RouterModule.forChild([
-            {path:'sum', component: SumComponent}
+            {path: 'calculate', component: CalculateComponent}
         ])
     ],
 
