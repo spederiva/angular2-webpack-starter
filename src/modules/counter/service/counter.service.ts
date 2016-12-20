@@ -15,15 +15,11 @@ export class CounterService {
     increment() {
         this.counter++;
 
-        console.log(this.counter);
-
         return this.counter;
     }
 
     decrement() {
         this.counter--;
-
-        console.log(this.counter);
 
         return this.counter;
     }

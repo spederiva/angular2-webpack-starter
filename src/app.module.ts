@@ -22,6 +22,7 @@ import {ListComponent} from "./components/list/list";
 import {TheFormComponent} from "./components/the-form/TheFormComponent";
 import {SharedModule} from "./modules/shared/shared.module";
 import {CounterModule} from "./modules/counter/counter.module";
+import {NewListModule} from "./modules/newlist/newlist.module";
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {CounterModule} from "./modules/counter/counter.module";
         SharedModule,
 
         CalculateModule,
-        CounterModule
+        CounterModule,
+        NewListModule
     ],
 
     declarations: [
