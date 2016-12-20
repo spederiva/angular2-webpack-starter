@@ -25,6 +25,11 @@ export class ListService {
     }
 
     getList():Observable<Response> {
-        return this.http.get(this.usersApiUrl);
+        return this.http.get(this.usersApiUrl)
+            .map(x => {
+                console.log(x)
+
+                return x;
+            });
     }
 }

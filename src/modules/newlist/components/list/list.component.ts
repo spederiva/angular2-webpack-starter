@@ -30,10 +30,10 @@ export class ListComponent implements OnInit{
     ngOnInit():void {
         //this.listSrv.getList()
         //    .then(data => this.people = data);
-
+        debugger;
         let obs = this.listSrv.getList();
         console.log(obs);
-        debugger;
+        //debugger;
 
     }
 
