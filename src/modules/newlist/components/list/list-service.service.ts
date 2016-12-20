@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {} from '@angular/http';
 import {Http, Response} from '@angular/http';
 import {Observable} from "rxjs/Observable";
+import '../../../core/rxjs-operators';
 
 export const data = [
     {id: 1, name: 'Hercules'},
@@ -25,11 +26,28 @@ export class ListService {
     }
 
     getList():Observable<Response> {
-        return this.http.get(this.usersApiUrl)
-            .map(x => {
-                console.log(x)
+        let o = this.http.get(this.usersApiUrl)
+            .map(this.extractData);
 
-                return x;
-            });
+            //.map((x:Response) => {
+            //    debugger;
+            //    console.log(x);
+            //
+            //    return x;
+            //});
+
+        return o;
+    }
+
+    extractData(res:Response){
+        //debugger;
+        //console.log(res);
+        //alert(2222)
+
+        let body = res.json();
+
+        console.log(body);
+
+        return body || {};
     }
 }

@@ -20,18 +20,23 @@ import {ListService} from "./list-service.service";
         </table>
     `
 })
-export class ListComponent implements OnInit{
+export class ListComponent implements OnInit {
     people:any[];
 
-    constructor(private listSrv:ListService){
+    constructor(private listSrv:ListService) {
 
     }
 
     ngOnInit():void {
         //this.listSrv.getList()
         //    .then(data => this.people = data);
-        debugger;
-        let obs = this.listSrv.getList();
+
+        let obs = this.listSrv.getList()
+            .subscribe(d=> {
+                console.log("dddd", d);
+                this.people = d;
+            });
+
         console.log(obs);
         //debugger;
 
