@@ -15,35 +15,45 @@ export const data = [
 
 @Injectable()
 export class ListService {
-    private usersApiUrl = '/_data/users.json';
+    private usersApiUrl = '/_data/users.jsonn';
 
-    constructor(private http:Http) {
+    constructor(private http: Http) {
 
     }
 
-    getListPromise():Promise<any[]> {
+    getListPromise(): Promise<any[]> {
         return Promise.resolve(data);
     }
 
-    getList():Observable<Response> {
+    getList(): Observable<Response> {
         let o = this.http.get(this.usersApiUrl)
-            .map(this.extractData);
+            .map(this.extractData)
+            .catch((error: any, caught: Observable<any>) => {
+                // debugger
+                // In a real world app, we might use a remote logging infrastructure
+                let errMsg: string;
+                if (error instanceof Response) {
+                    const body = error.json() || '';
+                    const err = body.error || JSON.stringify(body);
+                    errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+                } else {
+                    errMsg = error.message ? error.message : error.toString();
+                }
+                console.error(errMsg);
+                return Observable.throw(errMsg);
+            });
 
-            //.map((x:Response) => {
-            //    debugger;
-            //    console.log(x);
-            //
-            //    return x;
-            //});
+        //.map((x:Response) => {
+        //    debugger;
+        //    console.log(x);
+        //
+        //    return x;
+        //});
 
         return o;
     }
 
-    extractData(res:Response){
-        //debugger;
-        //console.log(res);
-        //alert(2222)
-
+    extractData(res: Response) {
         let body = res.json();
 
         console.log(body);

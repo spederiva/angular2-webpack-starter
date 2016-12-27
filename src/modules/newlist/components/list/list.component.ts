@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
         //    .then(data => this.people = data);
 
         let obs = this.listSrv.getList()
-            .subscribe(d=> {
+            .subscribe((d:any)=> {
                 console.log("dddd", d);
                 this.people = d;
             });
