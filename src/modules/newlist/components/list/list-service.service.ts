@@ -15,7 +15,7 @@ export const data = [
 
 @Injectable()
 export class ListService {
-    private usersApiUrl = '/_data/users.jsonn';
+    private usersApiUrl = '/_data/users.json';
 
     constructor(private http: Http) {
 
@@ -29,7 +29,6 @@ export class ListService {
         let o = this.http.get(this.usersApiUrl)
             .map(this.extractData)
             .catch((error: any, caught: Observable<any>) => {
-                // debugger
                 // In a real world app, we might use a remote logging infrastructure
                 let errMsg: string;
                 if (error instanceof Response) {
@@ -41,7 +40,10 @@ export class ListService {
                 }
                 console.error(errMsg);
                 return Observable.throw(errMsg);
-            });
+            })
+            .catch((err:any, caught: Observable<any>)=>{
+                return Observable.throw('haval');
+            })
 
         //.map((x:Response) => {
         //    debugger;

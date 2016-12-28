@@ -7,6 +7,8 @@ import {ListService} from "./list-service.service";
     template: `
         <h1>New List</h1>
 
+        <add-person (add)="addPerson(name)" (submit)></add-person>
+
         <table border="1">
             <tr>
                 <th>Id</th>
@@ -32,15 +34,30 @@ export class ListComponent implements OnInit {
         //    .then(data => this.people = data);
 
         let obs = this.listSrv.getList()
-            .subscribe((d:any)=> {
-                console.log("dddd", d);
-                this.people = d;
-            });
+            .subscribe(
+                d => this.initData(d),
+                e => this.error(e)
+            )
+        //.error((err:any)=> {
+        //    alert('haval! => ' + err);
+        //})
 
         console.log(obs);
         //debugger;
 
     }
 
+    initData(d:any) {
+        console.log("data", d);
+        this.people = d;
+    }
+
+    error(err:any) {
+
+    }
+
+    addPerson(name:string){
+        alert(name);
+    }
 
 }
