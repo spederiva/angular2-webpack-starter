@@ -17,4 +17,8 @@ export class AppComponent {
     counter4:number = 40;
 
     name: string = "Moshe Levy";
+
+    dosomething(d){
+        alert(d);
+    }
 }
