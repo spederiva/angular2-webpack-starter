@@ -7,7 +7,7 @@ import {ListService} from "./list-service.service";
     template: `
         <h1>New List</h1>
 
-        <add-person (add)="addPerson(name)" (submit)></add-person>
+        <add-person (add)="addPerson($event)"></add-person>
 
         <table border="1">
             <tr>
@@ -57,7 +57,14 @@ export class ListComponent implements OnInit {
     }
 
     addPerson(name:string){
-        alert(name);
+        console.log('Adding new Person', name);
+
+        this.listSrv.addPerson(name)
+            .subscribe((newPerson:any)=>{
+               console.log('New Person Added', newPerson);
+
+                this.people.push(newPerson);
+            });
     }
 
 }

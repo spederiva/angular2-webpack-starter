@@ -23,6 +23,7 @@ import {TheFormComponent} from "./components/the-form/TheFormComponent";
 import {SharedModule} from "./modules/shared/shared.module";
 import {CounterModule} from "./modules/counter/counter.module";
 import {NewListModule} from "./modules/newlist/newlist.module";
+import {WikipediaModule} from "./modules/wikipedia/wikipedia.module";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {NewListModule} from "./modules/newlist/newlist.module";
 
         CalculateModule,
         CounterModule,
-        NewListModule
+        NewListModule,
+        WikipediaModule
     ],
 
     declarations: [

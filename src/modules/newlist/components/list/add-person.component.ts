@@ -6,7 +6,7 @@ import {Component, Output, EventEmitter} from '@angular/core';
     template: `
         <div>
             <input #personName/>
-            <button (click)="add(personName.value);personName.value=''">Submit</button>
+            <button (click)="addPerson(personName.value);personName.value=''">Submit</button>
         </div>
         <hr/>
     `
@@ -16,9 +16,7 @@ export class AddPerson{
 
     @Output() add:any = new EventEmitter<string>();
 
-    add(name:string){
-        alert(name);
-
+    addPerson(name:string){
         this.add.emit(name);
     }
 }
