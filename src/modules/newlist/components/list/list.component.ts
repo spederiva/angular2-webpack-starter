@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnChanges, SimpleChanges, DoCheck} from '@angular/core';
 import {ListService} from "./list-service.service";
 
 @Component({
@@ -22,7 +22,7 @@ import {ListService} from "./list-service.service";
         </table>
     `
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, DoCheck {
     people:any[];
 
     constructor(private listSrv:ListService) {
@@ -46,6 +46,14 @@ export class ListComponent implements OnInit {
         //debugger;
 
     }
+
+    ngDoCheck(): void {
+        console.log('ngDoCheck');
+    }
+
+    // ngOnChanges(changes: SimpleChanges): void {
+    //     console.log('OnChanges', changes);
+    // }
 
     initData(d:any) {
         console.log("data", d);

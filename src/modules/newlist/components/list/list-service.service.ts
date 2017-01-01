@@ -6,7 +6,8 @@ import '../../../core/rxjs-operators';
 @Injectable()
 export class ListService {
     //private usersApiUrl = '/_data/users.json';
-    private usersApiUrl = 'https://jsonplaceholder.typicode.com/users';
+    // private usersApiUrl = 'https://jsonplaceholder.typicode.com/users';
+    private usersApiUrl = 'app/users';
 
     constructor(private http: Http) {
     }
@@ -22,9 +23,7 @@ export class ListService {
     private extractData(res: Response) {
         let body = res.json();
 
-        console.log(body);
-
-        return body || {};
+        return body.data || body || {};
     }
 
     private error(error: any, caught: Observable<any>) {
@@ -48,10 +47,10 @@ export class ListService {
 
     addPerson(name: string): Observable<Response> {
         let person = {name};
-        let headers = new Headers({'Content-Type': 'application/json'});
-        let opt = new RequestOptions({headers});
+        // let headers = new Headers({'Content-Type': 'application/json'});
+        // let opt = new RequestOptions({headers});
 
-        return this.http.post(this.usersApiUrl, person, opt)
+        return this.http.post(this.usersApiUrl, person)
             .map(this.extractData)
             .catch(this.error);
     }

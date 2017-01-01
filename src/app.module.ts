@@ -24,6 +24,8 @@ import {SharedModule} from "./modules/shared/shared.module";
 import {CounterModule} from "./modules/counter/counter.module";
 import {NewListModule} from "./modules/newlist/newlist.module";
 import {WikipediaModule} from "./modules/wikipedia/wikipedia.module";
+import {requestOptionsProvider} from "./modules/core/overrides/app-request-options.service";
+
 
 
 @NgModule({
@@ -52,6 +54,10 @@ import {WikipediaModule} from "./modules/wikipedia/wikipedia.module";
         ListComponent,
         TheFormComponent,
         MyButtonComponent
+    ],
+
+    providers: [
+        requestOptionsProvider
     ],
 
     bootstrap: [AppComponent]

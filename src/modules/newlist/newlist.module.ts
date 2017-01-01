@@ -5,6 +5,8 @@ import {RouterModule} from '@angular/router'
 import {ListComponent} from "./components/list/list.component";
 import {ListService} from "./components/list/list-service.service";
 import {AddPerson} from "./components/list/add-person.component";
+import {InMemoryWebApiModule} from "angular-in-memory-web-api";
+import {UserMockData} from "./components/list/users-mock-data";
 
 @NgModule({
     imports:[
@@ -14,7 +16,9 @@ import {AddPerson} from "./components/list/add-person.component";
         RouterModule.forChild([{
             path: 'newlist',
             component: ListComponent
-        }])
+        }]),
+
+        InMemoryWebApiModule.forRoot(UserMockData)
 
     ],
 
