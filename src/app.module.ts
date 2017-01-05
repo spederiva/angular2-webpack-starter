@@ -4,7 +4,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from '@angular/router'
 
-import '../public/css/styles.css';
+//import '../public/css/styles.css';
 
 import {appRoutes} from "./app.routing";
 
@@ -25,8 +25,6 @@ import {CounterModule} from "./modules/counter/counter.module";
 import {NewListModule} from "./modules/newlist/newlist.module";
 import {WikipediaModule} from "./modules/wikipedia/wikipedia.module";
 import {requestOptionsProvider} from "./modules/core/overrides/app-request-options.service";
-
-
 
 @NgModule({
     imports: [
