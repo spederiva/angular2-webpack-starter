@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    fontSizePx: number = 12;
+    fontSizePx:number = 12;
 
     counter1:number = 10;
 
@@ -16,5 +16,13 @@ export class AppComponent {
 
     counter4:number = 40;
 
-    name: string = "Moshe Levy";
+    name:string = "Moshe Levy";
+
+    ngOnInit() {
+        console.log('App Initialized!');
+
+        setTimeout(()=> {
+            this.name = 'Sebastian';
+        }, 1000);
+    }
 }

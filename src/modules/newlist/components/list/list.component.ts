@@ -15,11 +15,17 @@ import {ListService} from "./list-service.service";
                 <th>Name</th>
             </tr>
 
-            <tr *ngFor="let person of people">
+            <tr *ngFor="let person of (people|filterLetterPure)">
                 <td>{{person.id}}</td>
                 <td>{{person.name}}</td>
             </tr>
         </table>
+
+        <ul>
+            <li *ngFor="let person of (people|filterLetterImpure)">
+                {{person.id}} - {{person.name}}
+            </li>
+        </ul>
     `
 })
 export class ListComponent implements OnInit, DoCheck {
