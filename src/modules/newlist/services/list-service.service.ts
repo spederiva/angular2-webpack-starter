@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http';
-import {Observable} from "rxjs/Observable";
-import '../../../core/rxjs-operators';
+import {Observable} from "../../../../node_modules/rxjs/Observable";
+import '../../core/rxjs-operators';
 
 @Injectable()
 export class ListService {

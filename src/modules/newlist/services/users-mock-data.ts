@@ -1,5 +1,5 @@
 import {InMemoryDbService} from "angular-in-memory-web-api";
-const users = require('json-loader!../../../../../_data/users.json');
+const users = require('json-loader!../../../../_data/users.json');
 
 export class UserMockData implements InMemoryDbService {
     createDb(): {} {

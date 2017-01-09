@@ -1,5 +1,5 @@
 import {Component, OnInit, OnChanges, SimpleChanges, DoCheck} from '@angular/core';
-import {ListService} from "./list-service.service";
+import {ListService} from "./../../services/list-service.service.ts";
 
 @Component({
     selector: 'list',
@@ -16,7 +16,7 @@ import {ListService} from "./list-service.service";
             </tr>
 
             <tr *ngFor="let person of (people|filterLetterPure)">
-                <td>{{person.id}}</td>
+                <td><a routerLink="/newlist/details/{{person.id}}">{{person.id}}</a></td>
                 <td>{{person.name}}</td>
             </tr>
         </table>

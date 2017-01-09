@@ -3,22 +3,29 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import {RouterModule} from '@angular/router'
 import {ListComponent} from "./components/list/list.component";
-import {ListService} from "./components/list/list-service.service";
+import {ListService} from "./services/list-service.service";
 import {AddPerson} from "./components/list/add-person.component";
 import {InMemoryWebApiModule} from "angular-in-memory-web-api";
-import {UserMockData} from "./components/list/users-mock-data";
+import {UserMockData} from "./services/users-mock-data";
 import {FilterLetterPurePipe} from "./pipes/filter-letter-pure.pipe";
 import {FilterLetterImpurePipe} from "./pipes/filter-letter-impure.pipe";
+import {DetailsComponent} from "./components/details/details.component";
 
 @NgModule({
-    imports:[
+    imports: [
         BrowserModule,
         FormsModule,
 
-        RouterModule.forChild([{
-            path: 'newlist',
-            component: ListComponent
-        }]),
+        RouterModule.forChild([
+            {
+                path: 'newlist',
+                component: ListComponent
+            },
+            {
+                path: 'newlist/details/:id',
+                component: DetailsComponent
+            }
+        ]),
 
         InMemoryWebApiModule.forRoot(UserMockData)
 
@@ -29,13 +36,14 @@ import {FilterLetterImpurePipe} from "./pipes/filter-letter-impure.pipe";
         FilterLetterImpurePipe,
 
         ListComponent,
-        AddPerson
+        AddPerson,
+        DetailsComponent
     ],
 
-    providers:[
+    providers: [
         ListService
     ]
 })
-export class NewListModule{
+export class NewListModule {
 
 }
